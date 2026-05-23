@@ -261,7 +261,7 @@ ul{list-style:none;}
 
 .mobile-menu{
   position:fixed;top:0;right:-100%;
-  width:80%;max-width:340px;height:100vh;z-index:99;
+  width:80%;max-width:340px;height:100vh;z-index:101;
   background:rgba(11,37,37,.92);
   backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
@@ -1269,6 +1269,8 @@ footer::before{
   .flavors-grid{grid-template-columns:repeat(2,1fr);}
   .mixes{grid-template-columns:repeat(2,1fr);}
   .mix-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 11px);margin:0 auto;}
+.sch-note{display:block;}
+.sch-note-icon{margin-right:4px;}
 }
 
 /* =========================================================
