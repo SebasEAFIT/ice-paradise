@@ -272,11 +272,13 @@ ul{list-style:none;}
 }
 .mobile-menu.open{right:0;}
 .mobile-menu a{
-  font-size:22px;color:var(--color-mint);font-family:var(--font-display);
+  font-size:17.6px;color:var(--color-mint);font-family:var(--font-display);
   padding:14px 4px;min-height:48px;display:flex;align-items:center;
   border-bottom:1px solid rgba(64,248,227,.08);
 }
 .mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu .nav-cta{color:var(--color-dark);justify-content:center;}
+.mobile-menu .nav-b2b{justify-content:center;}
 
 /* =========================================================
    HERO
@@ -1263,9 +1265,10 @@ footer::before{
   .step,.mix-card{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
   .mobile-menu{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
   .flavor-card{min-height:160px;}
-  .mix-img-wrap{height:110px;}
+  .mix-img-wrap{height:110px;width:100%;}
   .flavors-grid{grid-template-columns:repeat(2,1fr);}
   .mixes{grid-template-columns:repeat(2,1fr);}
+  .mix-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 11px);margin:0 auto;}
 }
 
 /* =========================================================
