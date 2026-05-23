@@ -1262,6 +1262,8 @@ footer::before{
   .value-card,.size-card{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
   .step,.mix-card{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
   .mobile-menu{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+  .flavor-card{min-height:160px;}
+  .mix-img-wrap{height:110px;}
 }
 
 /* =========================================================
