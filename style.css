@@ -312,7 +312,7 @@ ul{list-style:none;}
 .bg-video-overlay{
   position:fixed;inset:0;z-index:-2;
   background:
-    radial-gradient(ellipse at center,rgba(11,37,37,.35) 0%,rgba(11,37,37,.78) 75%,rgba(11,37,37,.9) 100%);
+    radial-gradient(ellipse at center,rgba(11,37,37,.15) 0%,rgba(11,37,37,.55) 75%,rgba(11,37,37,.75) 100%);
   pointer-events:none;
 }
 
@@ -1242,6 +1242,8 @@ footer::before{
   .foot-grid{grid-template-columns:1fr 1fr;}
 }
 @media (max-width:768px){
+  /* Bg fijo usa dvh para que la barra URL del navegador no corte la parte inferior */
+  .bg-video,.bg-video-overlay,#particles{height:100dvh;}
   body{cursor:auto;}
   .cursor-outer,.cursor-dot{display:none;}
   .nav{padding:14px 20px;}
