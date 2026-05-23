@@ -294,7 +294,20 @@ if(burger && mobileMenu){
     });
   }
   resize();
-  window.addEventListener('resize', resize);
+  // Mobile: la barra URL contrae/expande viewport con scroll → ignorar esos resizes
+  // que solo cambian alto. Solo regenerar partículas si el ancho cambió >50px (rotación real).
+  let lastW = window.innerWidth;
+  window.addEventListener('resize', () => {
+    const newW = window.innerWidth;
+    if(isTouch && Math.abs(newW - lastW) < 50){
+      // Solo refrescar dims del canvas, no recrear partículas
+      w = canvas.width = newW;
+      h = canvas.height = window.innerHeight;
+      return;
+    }
+    lastW = newW;
+    resize();
+  });
   const FADE = 80;
   function edgeAlpha(x,y){
     const dx = Math.min(x, w - x);
@@ -337,6 +350,13 @@ let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
 let outerX = mouseX, outerY = mouseY;
 let dotX = mouseX, dotY = mouseY;
 let lastTrail = 0;
+
+// Mobile: cursor custom no aplica (no mouse). Ocultar divs para que no queden en pantalla.
+if(isTouch){
+  document.querySelectorAll('.cursor-outer, .cursor-dot').forEach(el => {
+    el.style.display = 'none';
+  });
+}
 
 if(!isTouch){
   cursorOuter = document.querySelector('.cursor-outer');
@@ -429,6 +449,7 @@ if(!isTouch){
    TILT 3D cards
    ========================================================= */
 function bindTilt(){
+  if(isTouch) return; // Mobile: sin mouse no hay tilt. No registrar listeners.
   document.querySelectorAll('[data-tilt]').forEach(card => {
     if(card.dataset.tiltBound) return;
     card.dataset.tiltBound = '1';
@@ -454,23 +475,24 @@ bindTilt();
 /* =========================================================
    MAGNETIC buttons
    ========================================================= */
-document.querySelectorAll('[data-magnetic]').forEach(btn => {
-  if(isTouch) return;
-  btn.addEventListener('mousemove', e => {
-    const rect = btn.getBoundingClientRect();
-    const cx = rect.left + rect.width/2;
-    const cy = rect.top  + rect.height/2;
-    const dx = e.clientX - cx;
-    const dy = e.clientY - cy;
-    const dist = Math.hypot(dx, dy);
-    if(dist < 90){
-      btn.style.transform = `translate(${dx*0.25}px,${dy*0.25}px)`;
-    }
+if(!isTouch){
+  document.querySelectorAll('[data-magnetic]').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top  + rect.height/2;
+      const dx = e.clientX - cx;
+      const dy = e.clientY - cy;
+      const dist = Math.hypot(dx, dy);
+      if(dist < 90){
+        btn.style.transform = `translate(${dx*0.25}px,${dy*0.25}px)`;
+      }
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
   });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = '';
-  });
-});
+}
 
 /* =========================================================
    VIDEO BG — autoplay loop muted (kick para iOS si falla)
