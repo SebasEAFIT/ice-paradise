@@ -3,9 +3,7 @@
    ========================================================= */
 @font-face{
   font-family:'Cheap Potatoes';
-  src:url('assets/fonts/CheapPotatoes.woff2') format('woff2'),
-      url('assets/fonts/CheapPotatoes.ttf') format('truetype'),
-      url('assets/fonts/CheapPotatoes.otf') format('opentype');
+  src: url('assets/fonts/CheapPotatoes.woff2') format('woff2');
   font-display:swap;
   font-weight:normal;
   font-style:normal;
