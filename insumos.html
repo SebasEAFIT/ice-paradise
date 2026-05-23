@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B2525">
+
+<title>Insumos para tu negocio · Base líquida para granizados | Ice Paradise</title>
+<meta name="description" content="Base líquida concentrada para granizados. Bolsa de 7 litros rinde 21 granizados. Ideal para cafeterías, heladerías, tiendas y eventos. Proveedor en Medellín.">
+<meta name="keywords" content="base liquida para granizados, concentrado para granizados, insumos para granizados, proveedor de granizados Medellin, liquido para granizadora, granizado mayorista, como montar negocio de granizados, insumos para heladeria, bolsa granizado 7 litros">
+<meta name="author" content="Ice Paradise">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://iceparadise.co/insumos.html">
+
+<meta property="og:type" content="product">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="Insumos para tu negocio · Base líquida para granizados">
+<meta property="og:description" content="Bolsa de 7L rinde 21 granizados de 12 oz. Perfecto para cafeterías, heladerías y eventos. Cotiza por WhatsApp.">
+<meta property="og:image" content="assets/logo-text.png">
+<meta property="og:url" content="https://iceparadise.co/insumos.html">
+
+<meta name="geo.region" content="CO-ANT">
+<meta name="geo.placename" content="Medellín, Laureles">
+
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="apple-touch-icon" href="assets/logo-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="insumos.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Base líquida concentrada para granizados",
+  "brand": {"@type":"Brand","name":"Ice Paradise"},
+  "description": "Líquido concentrado de excelente sabor y calidad para preparación de granizados. Bolsa de 7L rinde 21 granizados de 12 oz. Para negocios, cafeterías, tiendas y eventos.",
+  "image": "assets/logo-text.png",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Base sin licor",
+      "price": "30000",
+      "priceCurrency": "COP",
+      "eligibleQuantity": {"@type":"QuantitativeValue","value":1,"unitText":"Bolsa 7L"}
+    },
+    {
+      "@type": "Offer",
+      "name": "Base con licor",
+      "price": "45000",
+      "priceCurrency": "COP",
+      "eligibleQuantity": {"@type":"QuantitativeValue","value":1,"unitText":"Bolsa 7L"}
+    }
+  ]
+}
+</script>
+
+<script src="script.js" defer></script>
+<script defer>
+// === Beams static background (canvas 2D, sin animación) ===
+window.addEventListener('load', () => {
+  const canvas = document.getElementById('b2bBeams');
+  if(!canvas) return;
+  const isMobile = matchMedia('(max-width:768px)').matches;
+  const ctx = canvas.getContext('2d');
+  if(!ctx) return;
+
+  const INTENSITY = 0.95;
+  const MIN_BEAMS = isMobile ? 6 : 14;
+  const TOTAL = Math.floor(MIN_BEAMS * 1.5);
+  let beams = [];
+
+  function rand(a,b){ return a + Math.random() * (b - a); }
+  function brandHue(idx){
+    if(Math.random() < 0.18) return rand(60, 90);
+    return 150 + ((idx ?? Math.random()) * 50);
+  }
+  function createBeam(w,h,idx,total){
+    const col = idx % 3;
+    const spacing = w / 3;
+    return {
+      x: col*spacing + spacing/2 + (Math.random()-0.5)*spacing*0.5,
+      y: Math.random() * h * 1.2 - h * 0.1,
+      width: 100 + Math.random()*100,
+      length: h * 2.5,
+      angle: -35 + Math.random() * 10,
+      opacity: 0.22 + Math.random()*0.12,
+      hue: Math.random() < 0.18 ? rand(60, 90) : 150 + (idx * 50) / total,
+      pulse: Math.random() * Math.PI * 2,
+    };
+  }
+
+  function drawBeam(b){
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.rotate((b.angle * Math.PI) / 180);
+    const pulsing = b.opacity * (0.8 + Math.sin(b.pulse)*0.2) * INTENSITY;
+    const grad = ctx.createLinearGradient(0,0,0,b.length);
+    grad.addColorStop(0,   `hsla(${b.hue}, 90%, 65%, 0)`);
+    grad.addColorStop(0.1, `hsla(${b.hue}, 90%, 65%, ${pulsing*0.5})`);
+    grad.addColorStop(0.4, `hsla(${b.hue}, 90%, 65%, ${pulsing})`);
+    grad.addColorStop(0.6, `hsla(${b.hue}, 90%, 65%, ${pulsing})`);
+    grad.addColorStop(0.9, `hsla(${b.hue}, 90%, 65%, ${pulsing*0.5})`);
+    grad.addColorStop(1,   `hsla(${b.hue}, 90%, 65%, 0)`);
+    ctx.fillStyle = grad;
+    ctx.fillRect(-b.width/2, 0, b.width, b.length);
+    ctx.restore();
+  }
+
+  function render(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width  = window.innerWidth  * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width  = window.innerWidth  + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.scale(dpr, dpr);
+    beams = Array.from({length: TOTAL}, (_, i) => createBeam(window.innerWidth, window.innerHeight, i, TOTAL));
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    ctx.filter = isMobile ? 'blur(4px)' : 'blur(6px)';
+    beams.forEach(drawBeam);
+  }
+  render();
+  // Re-render solo si cambia el tamaño de ventana (no en cada frame)
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    if(resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 150);
+  });
+});
+
+// === Quote form → WhatsApp ===
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('quoteForm');
+  const errBox = document.getElementById('quoteError');
+  if(!form) return;
+  const PHONE = '573013784600';
+
+  // Botones +/- del campo cantidad
+  const qtyInput = document.getElementById('qfCantidad');
+  const qtyDown  = form.querySelector('.qf-num-down');
+  const qtyUp    = form.querySelector('.qf-num-up');
+  if(qtyInput && qtyDown && qtyUp){
+    const MIN = 4;
+    function syncQty(){
+      const v = Math.max(MIN, parseInt(qtyInput.value || MIN, 10));
+      qtyInput.value = v;
+      qtyDown.disabled = v <= MIN;
+    }
+    qtyDown.addEventListener('click', () => {
+      qtyInput.value = Math.max(MIN, (parseInt(qtyInput.value || MIN, 10) - 1));
+      syncQty();
+    });
+    qtyUp.addEventListener('click', () => {
+      qtyInput.value = (parseInt(qtyInput.value || MIN, 10) + 1);
+      syncQty();
+    });
+    qtyInput.addEventListener('input', syncQty);
+    qtyInput.addEventListener('blur', syncQty);
+    syncQty();
+  }
+
+  // Toggle dirección según modalidad
+  const addrWrap = document.getElementById('qfAddressWrap');
+  const addrInput = document.getElementById('qfAddress');
+  function syncAddress(){
+    const modalidad = form.querySelector('input[name="modalidad"]:checked')?.value;
+    const isEnvio = modalidad === 'envio';
+    addrWrap.classList.toggle('qf-hide', !isEnvio);
+    if(isEnvio){
+      addrInput.setAttribute('required','');
+    } else {
+      addrInput.removeAttribute('required');
+      addrInput.value = '';
+    }
+  }
+  form.querySelectorAll('input[name="modalidad"]').forEach(r => r.addEventListener('change', syncAddress));
+  syncAddress();
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    errBox.hidden = true;
+    const data = new FormData(form);
+    const nombre    = (data.get('nombre')    || '').trim();
+    const telefono  = (data.get('telefono')  || '').trim();
+    const negocio   = (data.get('negocio')   || '').trim();
+    const ciudad    = (data.get('ciudad')    || '').trim();
+    const tipo      = (data.get('tipo')      || '').trim();
+    const cantidad  = (data.get('cantidad')  || '').trim();
+    const modalidad = (data.get('modalidad') || '').trim();
+    const direccion = (data.get('direccion') || '').trim();
+    const sabores   = (data.get('sabores')   || '').trim();
+    const mensaje   = (data.get('mensaje')   || '').trim();
+    const isEnvio = modalidad === 'envio';
+    if(!nombre || !telefono || !negocio || !ciudad || !tipo || !cantidad || Number(cantidad) < 4 || !modalidad || (isEnvio && !direccion)){
+      errBox.hidden = false;
+      errBox.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    const modText = isEnvio
+      ? '🛵 Envío a domicilio'
+      : '🏬 Recoger en punto (Circular 4 #72-58, Laureles)';
+    const lines = [
+      '*Cotización de insumos · Ice Paradise*',
+      '',
+      `👤 *Nombre:* ${nombre}`,
+      `📞 *Teléfono:* ${telefono}`,
+      `🏪 *Tipo de negocio:* ${negocio}`,
+      `📍 *Ciudad:* ${ciudad}`,
+      `📦 *Producto:* ${tipo}`,
+      `🔢 *Cantidad de bolsas:* ${cantidad}`,
+      `🚚 *Modalidad:* ${modText}`,
+    ];
+    if(isEnvio) lines.push(`🏠 *Dirección:* ${direccion}`);
+    if(sabores) lines.push(`🍓 *Sabores de interés:* ${sabores}`);
+    if(mensaje) lines.push('', `💬 *Mensaje:* ${mensaje}`);
+    lines.push('', '— Enviado desde iceparadise.co/insumos');
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/${PHONE}?text=${text}`, '_blank', 'noopener');
+  });
+});
+</script>
+</head>
+<body class="page-b2b">
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-stack">
+    <div class="logo-spin"></div>
+    <img class="loader-logo" src="assets/logo-icon.png" alt="">
+  </div>
+  <div class="bar"></div>
+</div>
+
+<div id="scroll-progress"></div>
+
+<div class="cursor-outer" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo" data-magnetic aria-label="Ice Paradise">
+    <img src="assets/logo-text.png" alt="Ice Paradise">
+  </a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="index.html">Local Laureles</a>
+    <a href="#producto">Producto</a>
+    <a href="#rentabilidad">Rentabilidad</a>
+    <a href="#sabores">Sabores</a>
+    <a href="#proceso">Cotizar</a>
+    <a href="#contacto-b2b">Contacto</a>
+  </nav>
+  <a href="#proceso" class="nav-cta" data-magnetic>Cotizar</a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html">← Local Laureles</a>
+  <a href="#producto">Producto</a>
+  <a href="#rentabilidad">Rentabilidad</a>
+  <a href="#sabores">Sabores</a>
+  <a href="#proceso">Cotizar</a>
+  <a href="#contacto-b2b">Contacto</a>
+  <a href="#proceso" class="nav-cta" style="margin-top:18px;">Cotizar</a>
+</aside>
+
+<!-- Patrón de fondo B2B -->
+<div class="b2b-bg" aria-hidden="true"></div>
+<div class="b2b-grid" aria-hidden="true"></div>
+
+<!-- Beams animated canvas — bg dinámico -->
+<canvas id="b2bBeams" aria-hidden="true"></canvas>
+<div class="b2b-beams-overlay" aria-hidden="true"></div>
+
+<!-- ===== HERO B2B ===== -->
+<section class="hero hero-b2b" id="inicio">
+  <div class="hero-content b2b-hero-content">
+    <h1 class="hero-title b2b-title">Insumos para tu negocio</h1>
+    <p class="hero-subtitle b2b-sub">Producimos y comercializamos <strong>base líquida concentrada</strong> para granizados. Ideal para cafeterías, heladerías, tiendas, eventos y emprendimientos.</p>
+    <div class="hero-cta">
+      <a href="#producto" class="btn btn-outline" data-magnetic>Ver Producto</a>
+      <a href="#proceso" class="btn btn-primary" data-magnetic>Cotizar Ahora</a>
+    </div>
+
+    <div class="b2b-stats">
+      <div class="b2b-stat"><span class="b2b-num">7 L</span><span class="b2b-lbl">Por bolsa</span></div>
+      <div class="b2b-stat"><span class="b2b-num">21</span><span class="b2b-lbl">Granizados 12 oz</span></div>
+      <div class="b2b-stat"><span class="b2b-num">4</span><span class="b2b-lbl">Pedido mínimo</span></div>
+      <div class="b2b-stat"><span class="b2b-num">+600%</span><span class="b2b-lbl">Margen estimado</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTO ===== -->
+<section id="producto" class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Producto</p>
+    <h2 class="section-title">Base líquida concentrada</h2>
+    <p class="section-desc">Concentrado listo para preparar granizados con excelente sabor y textura. Práctico, rentable y de fácil preparación.</p>
+
+    <div class="product-grid">
+      <article class="product-card" data-reveal>
+        <div class="product-icon">📦</div>
+        <h3>Presentación</h3>
+        <ul class="product-list">
+          <li>Bolsa de líquido concentrado</li>
+          <li><strong>7 litros</strong> por bolsa</li>
+          <li>Pedido mínimo: <strong>4 bolsas</strong></li>
+          <li>Fácil preparación</li>
+        </ul>
+      </article>
+
+      <article class="product-card" data-reveal>
+        <div class="product-icon">⚡</div>
+        <h3>Rendimiento</h3>
+        <ul class="product-list">
+          <li><strong>21 granizados</strong> de 12 oz por bolsa</li>
+          <li>Textura suave y consistente</li>
+          <li>Sabores intensos y refrescantes</li>
+          <li>Producto estable y rentable</li>
+        </ul>
+      </article>
+
+      <article class="product-card" data-reveal>
+        <div class="product-icon">🎯</div>
+        <h3>Para quién</h3>
+        <ul class="product-list">
+          <li>Cafeterías y tiendas</li>
+          <li>Restaurantes y bares</li>
+          <li>Eventos y catering</li>
+          <li>Negocios móviles y emprendimientos</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RENTABILIDAD ===== -->
+<section id="rentabilidad" class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Tu negocio</p>
+    <h2 class="section-title">Rentabilidad por bolsa</h2>
+    <p class="section-desc">Números reales sobre el ingreso que genera cada bolsa según el tipo de granizado. <strong>Todos los valores en pesos colombianos (COP).</strong></p>
+
+    <div class="rent-grid">
+      <article class="rent-card rent-sin" data-reveal>
+        <header class="rent-head">
+          <h3>Sin licor</h3>
+          <span class="rent-tag">Más vendido</span>
+        </header>
+        <div class="rent-price">
+          <span class="rent-cost">$30.000</span>
+          <span class="rent-cost-lbl">precio bolsa</span>
+        </div>
+        <table class="rent-table">
+          <tr><td>Granizados por bolsa</td><td><strong>21</strong></td></tr>
+          <tr><td>Costo por granizado</td><td><strong>$1.428</strong></td></tr>
+          <tr><td>Precio sugerido público</td><td><strong>$10.000</strong></td></tr>
+          <tr class="rent-row-total"><td>Ingreso por bolsa</td><td><strong>$210.000</strong></td></tr>
+        </table>
+        <p class="rent-margin">Margen estimado: <strong>$180.000</strong> por bolsa</p>
+      </article>
+
+      <article class="rent-card rent-con" data-reveal>
+        <header class="rent-head">
+          <h3>Con licor</h3>
+          <span class="rent-tag rent-tag-yellow">Premium</span>
+        </header>
+        <div class="rent-price">
+          <span class="rent-cost">$45.000</span>
+          <span class="rent-cost-lbl">precio bolsa</span>
+        </div>
+        <table class="rent-table">
+          <tr><td>Granizados por bolsa</td><td><strong>21</strong></td></tr>
+          <tr><td>Costo por granizado</td><td><strong>$2.142</strong></td></tr>
+          <tr><td>Precio sugerido público</td><td><strong>$12.000</strong></td></tr>
+          <tr class="rent-row-total"><td>Ingreso por bolsa</td><td><strong>$252.000</strong></td></tr>
+        </table>
+        <p class="rent-margin">Margen estimado: <strong>$207.000</strong> por bolsa</p>
+      </article>
+    </div>
+
+    <p class="rent-disclaimer">* El precio sugerido y el margen pueden variar según tu zona y tipo de negocio.</p>
+  </div>
+</section>
+
+<!-- ===== SABORES PROPIOS ===== -->
+<section id="sabores" class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Catálogo</p>
+    <h2 class="section-title">Sabores propios del punto de venta</h2>
+    <p class="section-desc">Estos son los 6 sabores estrella que vendemos en el local. Tú puedes ofrecerlos en tu negocio.</p>
+
+    <div class="sabores-grid">
+      <article class="sabor-row" data-reveal>
+        <div class="sabor-color sc-rosa"></div>
+        <div class="sabor-body">
+          <h3>Sparkling Rose</h3>
+          <p class="sabor-sub">Sandía · Durazno · Champaña</p>
+          <span class="sabor-licor">Vodka</span>
+        </div>
+      </article>
+
+      <article class="sabor-row" data-reveal>
+        <div class="sabor-color sc-azul"></div>
+        <div class="sabor-body">
+          <h3>Cocaína Líquida</h3>
+          <p class="sabor-sub">Lyche · Chicle · Mora</p>
+          <span class="sabor-licor">Ginebra + Vodka</span>
+        </div>
+      </article>
+
+      <article class="sabor-row" data-reveal>
+        <div class="sabor-color sc-amarillo"></div>
+        <div class="sabor-body">
+          <h3>Californication</h3>
+          <p class="sabor-sub">Maracuyá · Piña</p>
+          <span class="sabor-licor">Tequila + Ron</span>
+        </div>
+      </article>
+
+      <article class="sabor-row" data-reveal>
+        <div class="sabor-color sc-cafe"></div>
+        <div class="sabor-body">
+          <h3>Luxury</h3>
+          <p class="sabor-sub">Jagermeister + Red Bull</p>
+          <span class="sabor-licor">Jagermeister</span>
+        </div>
+      </article>
+
+      <article class="sabor-row" data-reveal>
+        <div class="sabor-color sc-rojo"></div>
+        <div class="sabor-body">
+          <h3>Carnival</h3>
+          <p class="sabor-sub">Fresa Bonbonbum · Frambuesa</p>
+          <span class="sabor-licor">Whisky + Tequila</span>
+        </div>
+      </article>
+
+      <article class="sabor-row" data-reveal>
+        <div class="sabor-color sc-verde"></div>
+        <div class="sabor-body">
+          <h3>Mojito</h3>
+          <p class="sabor-sub">Yerbabuena · Limón</p>
+          <span class="sabor-licor">Ron Blanco</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="custom-block" data-reveal>
+      <h3 class="custom-title">¿Necesitas otros sabores?</h3>
+      <p>Preparamos bases bajo pedido combinando los siguientes ingredientes:</p>
+
+      <div class="custom-group">
+        <h4>Licores disponibles</h4>
+        <div class="chip-row">
+          <span class="chip">Vodka</span>
+          <span class="chip">Tequila</span>
+          <span class="chip">Ron</span>
+          <span class="chip">Whisky</span>
+          <span class="chip">Ginebra</span>
+          <span class="chip">Pisco</span>
+          <span class="chip">Aguardiente</span>
+          <span class="chip">Jagermeister</span>
+        </div>
+      </div>
+
+      <div class="custom-group">
+        <h4>Sabores de fruta</h4>
+        <div class="chip-row">
+          <span class="chip chip-fruit">Cereza</span>
+          <span class="chip chip-fruit">Chicle</span>
+          <span class="chip chip-fruit">Durazno</span>
+          <span class="chip chip-fruit">Frambuesa</span>
+          <span class="chip chip-fruit">Fresa</span>
+          <span class="chip chip-fruit">Limón</span>
+          <span class="chip chip-fruit">Mango maduro</span>
+          <span class="chip chip-fruit">Mango biche</span>
+          <span class="chip chip-fruit">Mora azul</span>
+          <span class="chip chip-fruit">Manzana verde</span>
+          <span class="chip chip-fruit">Maracuyá</span>
+          <span class="chip chip-fruit">Naranja</span>
+          <span class="chip chip-fruit">Piña</span>
+          <span class="chip chip-fruit">Sandía</span>
+          <span class="chip chip-fruit">Uva</span>
+          <span class="chip chip-fruit">Lyche</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OTROS PRODUCTOS B2B ===== -->
+<section id="otros-productos" class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Catálogo extra</p>
+    <h2 class="section-title">Otros productos para tu negocio</h2>
+    <p class="section-desc">Insumos adicionales para complementar tu propuesta. <strong>Precios en pesos colombianos (COP).</strong></p>
+
+    <div class="otros-grid">
+      <article class="otros-card" data-reveal>
+        <div class="otros-icon">🌶️</div>
+        <h3>Chamoy</h3>
+        <p class="otros-desc">Salsa concentrada agridulce con un toque picante. Perfecta para darle ese sabor mexicano único al granizado: se mezcla directamente y potencia los sabores frutales.</p>
+        <div class="otros-price">
+          <span class="otros-amount">$10.000</span>
+          <span class="otros-unit">litro</span>
+        </div>
+      </article>
+
+      <article class="otros-card" data-reveal>
+        <div class="otros-icon">🍬</div>
+        <h3>Michelador</h3>
+        <p class="otros-desc">Gel adhesivo que se aplica en el borde del vaso para que la sal, el polvo o el minisigüí queden bien fijados. Listo para usar.</p>
+        <div class="otros-price">
+          <span class="otros-amount">$10.000</span>
+          <span class="otros-unit">bolsa 250 g</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFICIOS ===== -->
+<section class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Por qué elegirnos</p>
+    <h2 class="section-title">Beneficios para tu negocio</h2>
+
+    <div class="ben-grid">
+      <article class="ben-card" data-reveal>
+        <div class="ben-check">✓</div>
+        <h3>Práctico y fácil</h3>
+        <p>Preparación directa. Tu equipo aprende en minutos.</p>
+      </article>
+      <article class="ben-card" data-reveal>
+        <div class="ben-check">✓</div>
+        <h3>Sabor probado</h3>
+        <p>Producto validado en nuestro propio local de Laureles.</p>
+      </article>
+      <article class="ben-card" data-reveal>
+        <div class="ben-check">✓</div>
+        <h3>Bajo costo de entrada</h3>
+        <p>Ideal para emprendimientos. Pedido mínimo accesible.</p>
+      </article>
+      <article class="ben-card" data-reveal>
+        <div class="ben-check">✓</div>
+        <h3>Buen rendimiento</h3>
+        <p>21 granizados por bolsa con margen alto por venta.</p>
+      </article>
+      <article class="ben-card" data-reveal>
+        <div class="ben-check">✓</div>
+        <h3>Perfecto para móviles</h3>
+        <p>Cafeterías, eventos y negocios sobre ruedas.</p>
+      </article>
+      <article class="ben-card" data-reveal>
+        <div class="ben-check">✓</div>
+        <h3>Envíos nacionales</h3>
+        <p>Cobertura en Medellín y despachos a todo Colombia.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COTIZACIÓN — FORMULARIO ===== -->
+<section id="proceso" class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Cotización rápida</p>
+    <h2 class="section-title">Pide tu cotización</h2>
+    <p class="section-desc">Llena tus datos y al enviar abrimos WhatsApp con tu pedido listo. Te respondemos el mismo día.</p>
+
+    <form class="quote-form" id="quoteForm" data-reveal novalidate>
+      <div class="qf-row">
+        <label class="qf-field">
+          <span class="qf-label">Nombre completo <em>*</em></span>
+          <input type="text" name="nombre" required autocomplete="name" placeholder="Ej: María Restrepo">
+        </label>
+        <label class="qf-field">
+          <span class="qf-label">Teléfono <em>*</em></span>
+          <input type="tel" name="telefono" required autocomplete="tel" placeholder="Ej: 300 123 4567" inputmode="tel">
+        </label>
+      </div>
+
+      <div class="qf-row">
+        <label class="qf-field">
+          <span class="qf-label">Tipo de negocio <em>*</em></span>
+          <select name="negocio" required>
+            <option value="">Selecciona…</option>
+            <option>Cafetería</option>
+            <option>Heladería / granizadería</option>
+            <option>Restaurante / bar</option>
+            <option>Tienda / minimercado</option>
+            <option>Evento / catering</option>
+            <option>Negocio móvil / carrito</option>
+            <option>Emprendimiento nuevo</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label class="qf-field">
+          <span class="qf-label">Ciudad <em>*</em></span>
+          <input type="text" name="ciudad" required autocomplete="address-level2" placeholder="Ej: Medellín">
+        </label>
+      </div>
+
+      <div class="qf-row">
+        <label class="qf-field">
+          <span class="qf-label">Tipo de producto <em>*</em></span>
+          <select name="tipo" required>
+            <option value="">Selecciona…</option>
+            <option>Sin licor ($30.000/bolsa)</option>
+            <option>Con licor ($45.000/bolsa)</option>
+            <option>Ambos</option>
+          </select>
+        </label>
+        <label class="qf-field">
+          <span class="qf-label">Cantidad de bolsas <em>*</em></span>
+          <div class="qf-number-wrap">
+            <button type="button" class="qf-num-btn qf-num-down" aria-label="Disminuir">−</button>
+            <input type="number" name="cantidad" id="qfCantidad" required min="4" step="1" value="4" inputmode="numeric">
+            <button type="button" class="qf-num-btn qf-num-up" aria-label="Aumentar">+</button>
+          </div>
+          <span class="qf-hint">Pedido mínimo: 4 bolsas</span>
+        </label>
+      </div>
+
+      <fieldset class="qf-field qf-radio-group">
+        <legend class="qf-label">Modalidad de entrega <em>*</em></legend>
+        <div class="qf-radio-row">
+          <label class="qf-radio">
+            <input type="radio" name="modalidad" value="envio" required checked>
+            <span class="qf-radio-card">
+              <span class="qf-radio-title">🛵 Envío a tu dirección</span>
+              <span class="qf-radio-sub">Despacho en Medellín o nacional</span>
+            </span>
+          </label>
+          <label class="qf-radio">
+            <input type="radio" name="modalidad" value="recogo">
+            <span class="qf-radio-card">
+              <span class="qf-radio-title">🏬 Recoger en el punto</span>
+              <span class="qf-radio-sub">Circular 4 #72-58, Laureles, Medellín</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="qf-field" id="qfAddressWrap">
+        <span class="qf-label">Dirección de entrega <em data-required>*</em></span>
+        <input type="text" name="direccion" id="qfAddress" placeholder="Ej: Cra 70 #45-23, apto 302, barrio Laureles" autocomplete="street-address">
+        <span class="qf-hint">Incluye barrio y referencia si es posible</span>
+      </label>
+
+      <label class="qf-field">
+        <span class="qf-label">Sabores de interés <span class="qf-opt">(opcional)</span></span>
+        <input type="text" name="sabores" placeholder="Ej: Mojito, Carnival, Mango biche">
+      </label>
+
+      <label class="qf-field">
+        <span class="qf-label">Mensaje adicional <span class="qf-opt">(opcional)</span></span>
+        <textarea name="mensaje" rows="3" placeholder="Cuéntanos algo más sobre tu pedido…"></textarea>
+      </label>
+
+      <p class="qf-disclaimer">Al enviar abriremos WhatsApp con tu cotización lista para que solo presiones "Enviar".</p>
+
+      <button type="submit" class="btn btn-primary qf-submit" data-magnetic>Cotizar por WhatsApp 💬</button>
+      <p class="qf-error" id="quoteError" hidden>Faltan campos por llenar. Revisa los marcados con *.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== CONTACTO B2B ===== -->
+<section id="contacto-b2b" class="b2b-section">
+  <div class="container">
+    <p class="section-eyebrow">Contacto comercial</p>
+    <h2 class="section-title">Hablemos de tu pedido</h2>
+    <p class="section-desc">Te atiende directamente nuestra representante legal con cotizaciones personalizadas.</p>
+
+    <div class="b2b-contact-grid">
+      <article class="b2b-contact-card" data-reveal>
+        <div class="b2b-contact-icon">👤</div>
+        <h3>Astrid Arango Quintero</h3>
+        <p class="b2b-role">Representante Legal</p>
+      </article>
+      <article class="b2b-contact-card" data-reveal>
+        <div class="b2b-contact-icon">📲</div>
+        <h3>WhatsApp / Llamada</h3>
+        <p><a href="tel:+573013784600">+57 301 378 4600</a></p>
+        <a href="https://wa.me/573013784600?text=Hola!%20Quiero%20cotizar%20insumos%20Ice%20Paradise" class="btn btn-outline" target="_blank" rel="noopener" data-magnetic style="margin-top:14px;">Escribir ahora</a>
+      </article>
+      <article class="b2b-contact-card" data-reveal>
+        <div class="b2b-contact-icon">📍</div>
+        <h3>Ubicación</h3>
+        <p>Circular 4 #72-58<br>Laureles, Medellín — Colombia</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAB ===== -->
+<a href="https://wa.me/573013784600?text=Hola!%20Quiero%20cotizar%20insumos%20Ice%20Paradise" class="fab" data-magnetic target="_blank" rel="noopener" aria-label="WhatsApp comercial">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13 1.59 5.94L0 24l6.34-1.66a11.86 11.86 0 0 0 5.71 1.46h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.23-6.15-3.41-8.45zM12.06 21.8a9.92 9.92 0 0 1-5.06-1.39l-.36-.21-3.76.99 1-3.67-.24-.38a9.93 9.93 0 0 1-1.52-5.27c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.91 7.03c0 5.48-4.45 9.92-9.92 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.71.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <img src="assets/logo-icon.png" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        Ice Paradise
+      </div>
+      <p class="foot-tag">Productores y comercializadores de base líquida para granizados.</p>
+      <p style="color:var(--color-mint);font-size:13px;">Medellín, Colombia.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Insumos B2B</h5>
+      <a href="#producto">Producto</a>
+      <a href="#rentabilidad">Rentabilidad</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#proceso">Cotizar</a>
+      <a href="#contacto-b2b">Contacto</a>
+    </div>
+    <div class="foot-col">
+      <h5>Comercial</h5>
+      <a href="https://wa.me/573013784600" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+573013784600">+57 301 378 4600</a>
+      <a href="https://www.instagram.com/granizadosiceparadise" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@granizadosiceparadise" target="_blank" rel="noopener">TikTok</a>
+      <a href="index.html">← Volver al local</a>
+    </div>
+  </div>
+  <p class="copy">© <span id="year"></span> Ice Paradise · Distribución B2B · Medellín, Colombia.</p>
+</footer>
+
+</body>
+</html>

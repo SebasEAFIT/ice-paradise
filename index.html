@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B2525">
+
+<title>Ice Paradise · Granizados con y sin licor en Laureles, Medellín</title>
+<meta name="description" content="Granizados tropicales con y sin licor en Laureles, Medellín. Domicilio rápido por WhatsApp. Mezcla tus sabores, elige tu michelado y disfruta. Circular 4 #72-58.">
+<meta name="keywords" content="granizados Medellín, granizados Laureles, granizados con licor Medellín, domicilio granizados Medellín, granizados tropicales, Ice Paradise Laureles">
+<meta name="author" content="Ice Paradise">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://iceparadise.co/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="Ice Paradise · Granizados con y sin licor en Laureles">
+<meta property="og:description" content="Del Trópico a tu Copa. Granizados frescos, michelados con Tajín o Minisigüí y mezclas con licor en Laureles, Medellín.">
+<meta property="og:image" content="assets/logo-text.png">
+<meta property="og:url" content="https://iceparadise.co/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ice Paradise · Granizados Laureles">
+<meta name="twitter:description" content="Granizados con y sin licor en Laureles, Medellín. Domicilios.">
+<meta name="twitter:image" content="assets/logo-text.png">
+
+<!-- Geo -->
+<meta name="geo.region" content="CO-ANT">
+<meta name="geo.placename" content="Medellín, Laureles">
+<meta name="geo.position" content="6.2459353;-75.5919795">
+<meta name="ICBM" content="6.2459353, -75.5919795">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="apple-touch-icon" href="assets/logo-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Pacifico&display=swap" rel="stylesheet">
+
+<!-- CSS externo -->
+<link rel="stylesheet" href="style.css">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<!-- Structured data — Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Ice Paradise",
+  "image": "assets/logo-text.png",
+  "description": "Granizados con y sin licor en Laureles, Medellín. Mezcla tus sabores, elige tu michelado y disfruta.",
+  "servesCuisine": ["Granizados", "Bebidas tropicales", "Cócteles"],
+  "priceRange": "$10.000 - $15.000",
+  "telephone": "+573006717475",
+  "url": "https://iceparadise.co/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Circular 4 #72-58",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 6.2459353,
+    "longitude": -75.5919795
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday"],
+      "opens": "16:00",
+      "closes": "00:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Thursday","Sunday"],
+      "opens": "17:00",
+      "closes": "01:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday","Saturday"],
+      "opens": "18:00",
+      "closes": "02:00"
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-stack">
+    <div class="logo-spin"></div>
+    <img class="loader-logo" src="assets/logo-icon.png" alt="">
+  </div>
+  <div class="bar"></div>
+</div>
+
+<!-- Scroll progress -->
+<div id="scroll-progress"></div>
+
+<!-- Custom cursor -->
+<div class="cursor-outer" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="nav-logo" data-magnetic aria-label="Ice Paradise">
+    <img src="assets/logo-text.png" alt="Ice Paradise">
+  </a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#inicio">Inicio</a>
+    <a href="#menu">Menú</a>
+    <a href="#comoelegir">Cómo Elegir</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <a href="insumos.html" class="nav-b2b">Insumos</a>
+  </nav>
+  <a href="https://www.google.com/maps/place/Ice+Paradise+-+Granizados+Laureles+Medell%C3%ADn/@6.2459353,-75.5945544,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44299e852051eb:0xdec1659fe8964990!8m2!3d6.2459353!4d-75.5919795!16s%2Fg%2F11xp1srpmj" class="nav-cta" data-magnetic target="_blank" rel="noopener">¡Visítanos! 📍</a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#inicio">Inicio</a>
+  <a href="#menu">Menú</a>
+  <a href="#comoelegir">Cómo Elegir</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#contacto">Contacto</a>
+  <a href="insumos.html" class="nav-b2b" style="margin-top:8px;">Insumos →</a>
+  <a href="https://www.google.com/maps/place/Ice+Paradise+-+Granizados+Laureles+Medell%C3%ADn/@6.2459353,-75.5945544,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44299e852051eb:0xdec1659fe8964990!8m2!3d6.2459353!4d-75.5919795!16s%2Fg%2F11xp1srpmj" class="nav-cta" target="_blank" rel="noopener" style="margin-top:18px;">¡Visítanos! 📍</a>
+</aside>
+
+<!-- Video de fondo global con scroll-scrub estilo Apple -->
+<video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto" disableremoteplayback aria-hidden="true">
+  <source src="assets/hero-video.mp4" type="video/mp4">
+</video>
+<div class="bg-video-overlay" aria-hidden="true"></div>
+
+<!-- Canvas global de copos -->
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1 class="hero-title" data-parallax="0.015" data-split>El paraíso está en Laureles</h1>
+    <p class="hero-subtitle" data-parallax="0.025">Granizados tropicales con y sin licor · Medellín</p>
+    <div class="hero-cta" data-parallax="0.02">
+      <a href="#menu" class="btn btn-outline" data-magnetic>Ver Menú</a>
+      <a href="https://wa.me/573006717475?text=Hola!%20Quiero%20pedir%20Ice%20Paradise" class="btn btn-primary" data-magnetic target="_blank" rel="noopener">Pedir Ahora 🛵</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    SCROLL
+    <span>▾</span>
+  </div>
+</section>
+
+<!-- ===== PROPUESTA DE VALOR ===== -->
+<section id="valor">
+  <div class="container">
+    <p class="section-eyebrow">Por qué Ice Paradise</p>
+    <h2 class="section-title">Frío, rico y paisa</h2>
+    <p class="section-desc">Del Trópico a tu Copa. Tú eliges el tamaño, el michelado y mezclas los sabores que quieras.</p>
+    <div class="value-grid">
+      <article class="value-card" data-tilt data-reveal>
+        <div class="value-icon">🧊</div>
+        <h3 class="value-title">Hielo Puro</h3>
+        <p class="value-text">Granizados con hielo cristalino, textura suave y sabor intenso.</p>
+      </article>
+      <article class="value-card" data-tilt data-reveal>
+        <div class="value-icon">🍑</div>
+        <h3 class="value-title">Tu Mezcla</h3>
+        <p class="value-text">Combinas los sabores que quieras y eliges el michelado: Tajín o Minisigüí.</p>
+      </article>
+      <article class="value-card" data-tilt data-reveal>
+        <div class="value-icon">🚀</div>
+        <h3 class="value-title">Domicilio Rápido</h3>
+        <p class="value-text">Pide por WhatsApp y te lo llevamos a tu casa en Medellín.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENÚ ===== -->
+<section id="menu">
+  <div class="container">
+    <p class="section-eyebrow">Carta</p>
+    <h2 class="section-title">Nuestros Sabores</h2>
+    <p class="section-desc">9 sabores sin licor, 6 con licor y 2 cremosos. Mezcla los que quieras y arma tu granizado perfecto.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="sin" role="tab">Sin licor</button>
+      <button class="tab" data-tab="con" role="tab">Con licor 🍹</button>
+      <button class="tab" data-tab="cremosos" role="tab">Cremosos 🍦</button>
+      <button class="tab" data-tab="todos" role="tab">Ver todos</button>
+    </div>
+
+    <!-- SIN LICOR -->
+    <div class="flavors-grid" data-pane="sin">
+      <article class="flavor-card fl-bonbonbum" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍓</div>
+          <h3 class="flavor-name">Fresa Bonbonbum</h3>
+          <p class="flavor-sub">El clásico que nunca falla</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-sandia" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍉</div>
+          <h3 class="flavor-name">Sandía</h3>
+          <p class="flavor-sub">Refrescante y dulce</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-mango" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🥭</div>
+          <h3 class="flavor-name">Mango Biche</h3>
+          <p class="flavor-sub">Ácido y paisa</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-blue" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🫐</div>
+          <h3 class="flavor-name">Blueberry</h3>
+          <p class="flavor-sub">Intenso del bosque</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-pina" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍍</div>
+          <h3 class="flavor-name">Piña</h3>
+          <p class="flavor-sub">Tropical clásico</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-cereza" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍒</div>
+          <h3 class="flavor-name">Cereza</h3>
+          <p class="flavor-sub">Dulce y profundo</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-frambuesa" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍇</div>
+          <h3 class="flavor-name">Frambuesa</h3>
+          <p class="flavor-sub">Ácido sofisticado</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-manzana" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍏</div>
+          <h3 class="flavor-name">Manzana Verde</h3>
+          <p class="flavor-sub">Fresco y ligero</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+      <article class="flavor-card fl-mangonat" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🥭</div>
+          <h3 class="flavor-name">Mango Biche Natural</h3>
+          <p class="flavor-sub">Pura fruta, sin más</p>
+        </div>
+        <span class="flavor-badge badge-sin">SIN LICOR ✅</span>
+      </article>
+    </div>
+
+    <!-- CON LICOR -->
+    <div class="flavors-grid" data-pane="con" hidden>
+      <article class="flavor-card fl-sandia" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🌹</div>
+          <h3 class="flavor-name">Sparkling Rose</h3>
+          <p class="flavor-sub">Sandía · Vodka</p>
+        </div>
+        <span class="flavor-badge badge-licor">CON LICOR 🍹</span>
+      </article>
+      <article class="flavor-card fl-passion" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">💧</div>
+          <h3 class="flavor-name">Cocaína Líquida</h3>
+          <p class="flavor-sub">Nerds · Ginebra y Vodka</p>
+        </div>
+        <span class="flavor-badge badge-licor">CON LICOR 🍹</span>
+      </article>
+      <article class="flavor-card fl-mango" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">☀️</div>
+          <h3 class="flavor-name">Californication</h3>
+          <p class="flavor-sub">Maracuyá · Tequila y Ron</p>
+        </div>
+        <span class="flavor-badge badge-licor">CON LICOR 🍹</span>
+      </article>
+      <article class="flavor-card fl-limonada" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">⚡</div>
+          <h3 class="flavor-name">Luxury</h3>
+          <p class="flavor-sub">Jager · Jagermeister y Red Bull</p>
+        </div>
+        <span class="flavor-badge badge-licor">CON LICOR 🍹</span>
+      </article>
+      <article class="flavor-card fl-bonbonbum" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🎪</div>
+          <h3 class="flavor-name">Carnival</h3>
+          <p class="flavor-sub">Fresa Bonbonbum · Whisky y Tequila</p>
+        </div>
+        <span class="flavor-badge badge-licor">CON LICOR 🍹</span>
+      </article>
+      <article class="flavor-card fl-fresa" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🌿</div>
+          <h3 class="flavor-name">Mojito</h3>
+          <p class="flavor-sub">Yerbabuena y Limón · Ron Bacardí</p>
+        </div>
+        <span class="flavor-badge badge-licor">CON LICOR 🍹</span>
+      </article>
+    </div>
+
+    <!-- CREMOSOS -->
+    <div class="flavors-grid" data-pane="cremosos" hidden>
+      <article class="flavor-card fl-baileys" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🍫</div>
+          <h3 class="flavor-name">Baileys</h3>
+          <p class="flavor-sub">Cremoso · Crema irlandesa</p>
+        </div>
+        <span class="flavor-badge badge-cremoso">CREMOSO 🍦</span>
+      </article>
+      <article class="flavor-card fl-pinacolada" data-tilt data-reveal>
+        <div>
+          <div class="flavor-emoji">🥥</div>
+          <h3 class="flavor-name">Piña Colada</h3>
+          <p class="flavor-sub">Cremoso · Coco y piña</p>
+        </div>
+        <span class="flavor-badge badge-cremoso">CREMOSO 🍦</span>
+      </article>
+    </div>
+
+    <!-- TODOS (vacío inicialmente, se llena en JS) -->
+    <div class="flavors-grid" data-pane="todos" hidden></div>
+
+    <div class="menu-cta">
+      <a href="https://wa.me/573006717475?text=Hola!%20Quiero%20pedir%20un%20granizado" class="btn btn-outline" data-magnetic target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRECIOS / TAMAÑOS ===== -->
+<section id="precios">
+  <div class="container">
+    <p class="section-eyebrow">Tamaños y precios</p>
+    <h2 class="section-title">Elige tu tamaño</h2>
+    <p class="section-desc">Tres líneas de granizados con precio según el tamaño. Tú decides la mezcla y el michelado.</p>
+
+    <!-- Tabla comparativa renderizada desde data/menu.js -->
+    <div class="price-table" id="priceTable" data-reveal></div>
+
+    <!-- Neverita aparte (precio personalizado) -->
+    <article class="size-card size-neverita" data-reveal>
+      <div class="size-icon">🧊</div>
+      <div class="size-oz">Neverita</div>
+      <div class="size-price" id="neveritaPrice">$60.000</div>
+      <p class="size-note" id="neveritaNote">en adelante según adiciones</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== PROMOCIONES ===== -->
+<section id="promos" style="padding-top:0;">
+  <div class="container">
+    <p class="section-eyebrow">Beneficios</p>
+    <h2 class="section-title">Promociones</h2>
+    <p class="section-desc">Ofertas vigentes todos los días en el local de Laureles.</p>
+    <div class="promos">
+      <article class="promo-card" data-tilt data-reveal>
+        <span class="promo-shine" aria-hidden="true"></span>
+        <div class="promo-icon">🍹</div>
+        <h3 class="promo-title">2 x $12.000</h3>
+        <p class="promo-text">Dos granizados de 12 oz por solo $12.000.</p>
+        <p class="promo-foot">⏰ Todos los días hasta las 8:00 pm</p>
+      </article>
+      <article class="promo-card" data-tilt data-reveal>
+        <span class="promo-shine" aria-hidden="true"></span>
+        <div class="promo-icon">🏷️</div>
+        <h3 class="promo-title">12 oz a $10.000</h3>
+        <p class="promo-text">Precio especial en el tamaño 12 oz.</p>
+        <p class="promo-foot">⏰ Todos los días hasta las 10:00 pm</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEBIDAS Y LICORES ===== -->
+<section id="bebidas">
+  <div class="container">
+    <p class="section-eyebrow">Más en la carta</p>
+    <h2 class="section-title">Bebidas y licores</h2>
+    <p class="section-desc">Además de granizados, tenemos cervezas, licores y bebidas para acompañar.</p>
+
+    <!-- Renderizado desde data/menu.js -->
+    <div class="menu-extra-grid">
+      <article class="menu-extra-card" data-reveal>
+        <header class="menu-extra-head">
+          <span class="menu-extra-icon">🥤</span>
+          <h3>Bebidas</h3>
+        </header>
+        <ul class="menu-extra-list" id="listBebidas"></ul>
+        <h4 class="menu-extra-subhead">Otros</h4>
+        <ul class="menu-extra-list" id="listOtros"></ul>
+      </article>
+
+      <article class="menu-extra-card" data-reveal>
+        <header class="menu-extra-head">
+          <span class="menu-extra-icon">🍺</span>
+          <h3>Cervezas</h3>
+        </header>
+        <ul class="menu-extra-list" id="listCervezas"></ul>
+      </article>
+
+      <article class="menu-extra-card" data-reveal>
+        <header class="menu-extra-head">
+          <span class="menu-extra-icon">🍾</span>
+          <h3>Licores</h3>
+        </header>
+        <ul class="menu-extra-list" id="listLicores"></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CÓMO ELEGIR ===== -->
+<section id="comoelegir">
+  <div class="deco deco-steps-l md" aria-hidden="true">
+    <picture>
+      <source media="(max-width:768px)" srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E">
+      <img src="assets/granizado-azul.png" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="deco deco-steps-r md" aria-hidden="true">
+    <picture>
+      <source media="(max-width:768px)" srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E">
+      <img src="assets/granizado-rojo.png" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="deco deco-mixes-l md" aria-hidden="true">
+    <picture>
+      <source media="(max-width:768px)" srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E">
+      <img src="assets/granizado-morado.png" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="deco deco-mixes-r md warm" aria-hidden="true">
+    <picture>
+      <source media="(max-width:768px)" srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E">
+      <img src="assets/granizado-amarillo.png" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="container">
+    <p class="section-eyebrow">Experiencia</p>
+    <h2 class="section-title">Cómo elegir tu granizado</h2>
+    <p class="section-desc">Tres pasos para armar tu paraíso. Tú mandas.</p>
+    <div class="steps">
+      <article class="step" data-reveal>
+        <div class="step-num">1</div>
+        <h3>En la caja</h3>
+        <p>Elige el tamaño de tu granizado: 12, 16, 22, 32 oz o neverita.</p>
+      </article>
+      <article class="step" data-reveal>
+        <div class="step-num">2</div>
+        <h3>En la barra</h3>
+        <p>Escoge el michelado: <strong>Tajín</strong> o <strong>Minisigüí</strong>. Mezcla los sabores que quieras.</p>
+      </article>
+      <article class="step" data-reveal>
+        <div class="step-num">3</div>
+        <h3>Toppings</h3>
+        <p>Elige <strong>5 dulces o toppings</strong> y disfruta tu Ice Paradise.</p>
+      </article>
+    </div>
+
+    <p class="section-eyebrow" style="margin-top:80px;">Recomendados</p>
+    <h3 class="section-title" style="font-size:clamp(32px,4.5vw,48px);">Mezclas sugeridas</h3>
+    <p class="section-desc">Combinaciones que ya probamos y nos encantan.</p>
+
+    <div class="mixes">
+      <article class="mix-card" data-tilt data-reveal>
+        <div class="mix-img-wrap">
+          <img class="mix-img" src="assets/Malib%C3%BA.png" alt="Granizado Malibú" loading="lazy" decoding="async">
+        </div>
+        <h4 class="mix-name">Malibú</h4>
+        <p class="mix-formula">Californication + Luxury</p>
+      </article>
+      <article class="mix-card" data-tilt data-reveal>
+        <div class="mix-img-wrap">
+          <img class="mix-img" src="assets/Chill%20%26%20Shot.png" alt="Granizado Chill & Shot" loading="lazy" decoding="async">
+        </div>
+        <h4 class="mix-name">Chill & Shot</h4>
+        <p class="mix-formula">Mojito + Carnival</p>
+      </article>
+      <article class="mix-card" data-tilt data-reveal>
+        <div class="mix-img-wrap">
+          <img class="mix-img" src="assets/Waikiki%20Splash.png" alt="Granizado Waikiki Splash" loading="lazy" decoding="async">
+        </div>
+        <h4 class="mix-name">Waikiki Splash</h4>
+        <p class="mix-formula">Cocaína Líquida + Sparkling Rose</p>
+      </article>
+      <article class="mix-card" data-tilt data-reveal>
+        <div class="mix-img-wrap">
+          <img class="mix-img" src="assets/Sunset.png" alt="Granizado Sunset" loading="lazy" decoding="async">
+        </div>
+        <h4 class="mix-name">Sunset</h4>
+        <p class="mix-formula">Californication + Cocaína Líquida</p>
+      </article>
+      <article class="mix-card" data-tilt data-reveal>
+        <div class="mix-img-wrap">
+          <img class="mix-img" src="assets/Bora%20Bora%20Freeze.png" alt="Granizado Bora Bora Freeze" loading="lazy" decoding="async">
+        </div>
+        <h4 class="mix-name">Bora Bora Freeze</h4>
+        <p class="mix-formula">Luxury + Mojito</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="nosotros">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-text">
+        <p class="section-eyebrow" style="text-align:left;">Nosotros</p>
+        <h2>Nacimos en Laureles para refrescar a Medellín</h2>
+        <p>Ice Paradise es la granizadería y coctelería del barrio Laureles. Hacemos granizados <strong>con y sin licor</strong>, usando frutas frescas y hielo en su punto.</p>
+        <p>La idea es simple: tú armas tu granizado. <strong>Eliges el tamaño</strong>, <strong>el michelado</strong> y <strong>mezclas los sabores</strong> que más te gusten. Del Trópico a tu copa.</p>
+        <div class="about-tags">
+          <span>🍓 Frutas frescas</span>
+          <span>🧊 Hielo cristalino</span>
+          <span>🌿 Tajín o Minisigüí</span>
+          <span>🛵 Domicilios</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto">
+  <div class="container">
+    <p class="section-eyebrow">Visítanos</p>
+    <h2 class="section-title">Contacto y ubicación</h2>
+    <p class="section-desc">Estamos en el corazón de Laureles. Pásate o pide por WhatsApp.</p>
+
+    <div class="contact-grid">
+      <div class="info-cards">
+        <div class="info-card" data-reveal>
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Dirección</h4>
+            <p>Circular 4 #72-58<br>Laureles, Medellín — Antioquia, Colombia</p>
+          </div>
+        </div>
+        <div class="info-card" data-reveal>
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Teléfono / WhatsApp</h4>
+            <p><a href="tel:+573006717475">+57 300 671 7475</a></p>
+          </div>
+        </div>
+        <div class="info-card info-card-schedule" data-reveal>
+          <div class="info-icon">🕘</div>
+          <div class="info-card-body">
+            <h4>Horario</h4>
+            <div class="sch-banner" id="schBanner" hidden></div>
+            <div class="mini-schedule" id="miniSchedule">
+              <div class="sch-row">
+                <div class="sch-days">
+                  <span class="sch-day" data-day="1">Lunes</span>
+                  <span class="sch-day" data-day="2">Martes</span>
+                  <span class="sch-day" data-day="3">Miércoles</span>
+                </div>
+                <div class="sch-time">4:00 pm – 12:00 am</div>
+              </div>
+              <div class="sch-row">
+                <div class="sch-days">
+                  <span class="sch-day" data-day="4">Jueves</span>
+                  <span class="sch-day" data-day="0">Domingo</span>
+                </div>
+                <div class="sch-time">5:00 pm – 1:00 am</div>
+              </div>
+              <div class="sch-row">
+                <div class="sch-days">
+                  <span class="sch-day" data-day="5">Viernes</span>
+                  <span class="sch-day" data-day="6">Sábado</span>
+                </div>
+                <div class="sch-time">6:00 pm – 2:00 am</div>
+              </div>
+            </div>
+            <p class="sch-note">
+              <span class="sch-note-icon">💡</span>
+              Cuando el lunes es festivo, el domingo abre <strong>6 pm – 2 am</strong> y el lunes <strong>5 pm – 1 am</strong>.
+            </p>
+          </div>
+        </div>
+        <div class="info-card" data-reveal>
+          <div class="info-icon">🛵</div>
+          <div>
+            <h4>Domicilios</h4>
+            <p><a href="https://wa.me/573006717475?text=Hola!%20Quiero%20pedir%20domicilio" target="_blank" rel="noopener">Pide por WhatsApp</a><br>Cobertura en Medellín</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-wrap" data-reveal>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.756!2d-75.5919795!3d6.2459353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44299e852051eb%3A0xdec1659fe8964990!2sIce%20Paradise%20-%20Granizados%20Laureles!5e0!3m2!1ses!2sco!4v1700000000000"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Ice Paradise Laureles"></iframe>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <a href="https://wa.me/573006717475?text=Hola!%20Quiero%20pedir%20Ice%20Paradise" class="btn btn-primary" data-magnetic target="_blank" rel="noopener">Escribir por WhatsApp 💬</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAB WhatsApp ===== -->
+<a href="https://wa.me/573006717475?text=Hola!%20Quiero%20pedir%20domicilio%20Ice%20Paradise" class="fab" data-magnetic target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13 1.59 5.94L0 24l6.34-1.66a11.86 11.86 0 0 0 5.71 1.46h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.23-6.15-3.41-8.45zM12.06 21.8a9.92 9.92 0 0 1-5.06-1.39l-.36-.21-3.76.99 1-3.67-.24-.38a9.93 9.93 0 0 1-1.52-5.27c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.91 7.03c0 5.48-4.45 9.92-9.92 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.71.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <img src="assets/logo-icon.png" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        Ice Paradise
+      </div>
+      <p class="foot-tag">Del Trópico a tu Copa — Frío, Rico y Paisa.</p>
+      <p style="color:var(--color-mint);font-size:13px;">Granizados con y sin licor en Laureles, Medellín.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explorar</h5>
+      <a href="#inicio">Inicio</a>
+      <a href="#menu">Menú</a>
+      <a href="#comoelegir">Cómo elegir</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contacto</h5>
+      <a href="https://wa.me/573006717475" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+573006717475">+57 300 671 7475</a>
+      <a href="https://www.google.com/maps/place/Ice+Paradise+-+Granizados+Laureles+Medell%C3%ADn/@6.2459353,-75.5945544,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44299e852051eb:0xdec1659fe8964990!8m2!3d6.2459353!4d-75.5919795!16s%2Fg%2F11xp1srpmj" target="_blank" rel="noopener">Cómo llegar</a>
+      <a href="https://www.instagram.com/granizadosiceparadise" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@granizadosiceparadise" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+  <p class="copy">© <span id="year"></span> Ice Paradise · Laureles, Medellín · Todos los derechos reservados.</p>
+</footer>
+
+<script src="data/menu.js" defer></script>
+<script src="script.js" defer></script>
+
+</body>
+</html>

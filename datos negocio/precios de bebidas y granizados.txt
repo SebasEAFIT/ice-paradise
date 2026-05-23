@@ -1,0 +1,56 @@
+granizados cremosos: 
+sabores (Baileys y Piña colada) 
+12oz: 15000
+16oz: 20000
+22oz: 25000
+32oz (litro): 35000
+
+precios de los granizados sin licor: 
+12oz: 10000
+16oz: 12000
+22oz: 13000
+32oz (litro): 20000
+
+Bebidas: 
+fourloko, 25000
+Michelada: 4000 + valor de la cerveza 
+Electrolit: 15000 
+amper: 8000
+Gaseosa 400ml: 5000
+
+Aguila en lata: 6000
+Aguila ligth en lata: 6000
+Poker en lata: 6000 
+Club Colombia dorada en lata: 8000
+Corono en lata: 8000 
+Stella en lata: 8000
+
+Coronita: 8000 
+Corona: 10000
+Heineken: 10000
+Stella Artois: 10000
+Smirnoff Ice: 12000 
+
+Licores: 
+Don Julio Botella: 380000
+Smirnoff de tamarindo botella: 100000
+Media de Aguardiente: 60000 
+Whisky Buchanans botella: 250000
+Media de Ron Viejo de Caldas: 90000
+old parr botella: 250000
+Vodka Absolut Botella: 160000
+
+Otros: 
+Chicles: 3000 
+Barquillo Hershey: 5000 
+Papas: 5000 
+Adición de licor: 10000 
+Gomitas enchiladas: 10000 
+Manis: 5000 
+Vaporizadores: 30000 
+
+
+
+
+
+
