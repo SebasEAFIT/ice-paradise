@@ -1264,6 +1264,8 @@ footer::before{
   .mobile-menu{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
   .flavor-card{min-height:160px;}
   .mix-img-wrap{height:110px;}
+  .flavors-grid{grid-template-columns:repeat(2,1fr);}
+  .mixes{grid-template-columns:repeat(2,1fr);}
 }
 
 /* =========================================================
