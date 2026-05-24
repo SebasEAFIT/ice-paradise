@@ -65,7 +65,7 @@ if(yearEl) yearEl.textContent = new Date().getFullYear();
       }));
       return data;
     }catch(err){
-      console.warn('Festivos CO no disponibles:', err);
+      /* festivos no disponibles — se omiten */
       return [];
     }
   }
@@ -381,7 +381,7 @@ if(!isTouch){
     requestAnimationFrame(loop);
   })();
 
-  const hoverSel = 'a, button, [data-magnetic], .flavor-card, .value-card, .size-card, .mix-card, .tab';
+  const hoverSel = 'a, button, [data-magnetic], .flavor-card, .size-card, .mix-card, .tab';
   document.querySelectorAll(hoverSel).forEach(el => {
     el.addEventListener('mouseenter', () => cursorOuter.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursorOuter.classList.remove('hover'));

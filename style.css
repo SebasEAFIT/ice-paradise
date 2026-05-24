@@ -59,7 +59,7 @@ ul{list-style:none;}
 .anim-off,.anim-off *{animation-play-state:paused!important;}
 
 /* Cheap Potatoes — grunge font con ascendentes (tildes) y descendentes brush largos. Caja generosa */
-.hero-title,.section-title,.value-title,.flavor-name,.size-oz,.promo-title,
+.hero-title,.section-title,.flavor-name,.size-oz,.promo-title,
 .step h3,.mix-name,.about-text h2,.foot-logo,.nav-logo,.loader-text,.mobile-menu a,
 .menu-extra-head h3,.menu-extra-subhead{
   line-height:1.5 !important;
@@ -447,53 +447,10 @@ section{position:relative;padding:120px 32px;}
   font-size:17px;
 }
 
-/* =========================================================
-   PROPUESTA DE VALOR
-   ========================================================= */
-.value-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
-}
-.value-card{
-  position:relative;
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  border-radius:20px;
-  padding:40px 32px;
-  text-align:center;
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  transition:transform .5s ease,box-shadow .4s ease,border-color .4s ease;
-  overflow:hidden;
-  transform-style:preserve-3d;
-  will-change:transform;
-}
-.value-card::before{
-  content:"";position:absolute;inset:0;border-radius:20px;
-  background:radial-gradient(circle var(--r,200px) at var(--mx,50%) var(--my,50%),rgba(0,246,255,.15),transparent 60%);
-  opacity:0;transition:opacity .35s;pointer-events:none;
-}
-.value-card:hover::before{opacity:1;}
-.value-card:hover{
-  border-color:var(--color-turquoise);
-  box-shadow:var(--glow-cyan);
-}
-.value-icon{
-  font-size:56px;margin-bottom:18px;display:inline-block;
-  filter:drop-shadow(0 0 14px rgba(255,255,142,.45));
-  animation:floaty 4s ease-in-out infinite;
-}
 @keyframes floaty{
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-8px);}
 }
-.value-title{
-  font-family:var(--font-display);
-  font-size:24px;color:var(--color-cyan);
-  line-height:1.3;padding:.15em 0 .08em;
-  letter-spacing:1px;
-  margin-bottom:10px;
-}
-.value-text{color:var(--color-green);font-size:15px;}
 
 /* =========================================================
    RESEÑAS GOOGLE (Elfsight wrapper)
@@ -1029,20 +986,6 @@ section{position:relative;padding:120px 32px;}
 .about-text p{color:var(--color-white);font-size:17px;margin-bottom:16px;}
 .about-text p strong{color:var(--color-mint);font-weight:600;}
 
-.about-visual{
-  position:relative;
-  display:flex;align-items:center;justify-content:center;
-  min-height:380px;
-}
-.about-glass-svg{width:min(80%,320px);will-change:transform;}
-.about-bubble{
-  position:absolute;width:24px;height:24px;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9),rgba(0,246,255,.4) 60%,transparent 70%);
-  box-shadow:0 0 14px rgba(0,246,255,.6);
-  will-change:transform;
-}
-.b1{top:12%;left:18%;}
-.b2{top:65%;right:14%;}
 
 .about-video-wrap{
   border-radius:20px;
@@ -1133,7 +1076,7 @@ section{position:relative;padding:120px 32px;}
   font-size:12px!important;line-height:1.5!important;
 }
 .sch-note strong{color:var(--color-white);}
-.sch-note-icon{flex-shrink:0;font-size:14px;}
+.sch-note-icon{flex-shrink:0;font-size:14px;margin-right:4px;}
 
 .mini-schedule{
   margin-top:10px;
@@ -1266,7 +1209,7 @@ footer::before{
    RESPONSIVE
    ========================================================= */
 @media (max-width:1024px){
-  .value-grid,.flavors-grid,.sizes-grid,.promos,.steps{grid-template-columns:repeat(2,1fr);}
+  .flavors-grid,.sizes-grid,.promos,.steps{grid-template-columns:repeat(2,1fr);}
   .about-wrap{grid-template-columns:1fr;gap:40px;}
   .contact-grid{grid-template-columns:1fr;}
   .hero-glass-svg{opacity:.4;width:min(40vw,250px);}
@@ -1282,7 +1225,7 @@ footer::before{
   .nav-links,.nav-cta{display:none;}
   .burger{display:flex;}
   section{padding:80px 20px;}
-  .value-grid,.flavors-grid,.sizes-grid,.promos,.steps{grid-template-columns:1fr;}
+  .flavors-grid,.sizes-grid,.promos,.steps{grid-template-columns:1fr;}
   .foot-grid{grid-template-columns:1fr;text-align:center;}
   .foot-brand{align-items:center;}
   .fab{width:56px;height:56px;font-size:26px;bottom:18px;right:18px;}
@@ -1290,7 +1233,7 @@ footer::before{
   button,a{cursor:pointer;}
   /* blur ligero — GPU móvil agradece */
   .flavor-card{backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);}
-  .value-card,.size-card{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .size-card{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
   .step,.mix-card{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
   .mobile-menu{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
   .flavor-card{min-height:160px;}
@@ -1298,8 +1241,7 @@ footer::before{
   .flavors-grid{grid-template-columns:repeat(2,1fr);}
   .mixes{grid-template-columns:repeat(2,1fr);}
   .mix-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 11px);margin:0 auto;}
-.sch-note{display:block;}
-.sch-note-icon{margin-right:4px;}
+  .sch-note{display:block;}
 }
 
 /* =========================================================
