@@ -451,6 +451,8 @@
   border-radius:14px;
   padding:26px 24px;
   transition:transform .35s,border-color .35s;
+  will-change:transform,opacity;
+  transform:translateZ(0);
 }
 .ben-card:hover{
   border-color:var(--color-turquoise);

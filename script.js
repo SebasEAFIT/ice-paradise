@@ -528,7 +528,16 @@ window.addEventListener('load', () => {
   if(document.querySelector('.scroll-indicator'))
     gsap.from('.scroll-indicator', {opacity:0, duration:.6, delay:1.6});
 
-  gsap.utils.toArray('[data-reveal]').forEach((el) => {
+  ScrollTrigger.batch('.ben-card', {
+    onEnter: batch => gsap.from(batch, {
+      y: 30, opacity: 0, duration: .5,
+      stagger: 0.07, ease: 'power2.out'
+    }),
+    start: 'top 90%',
+    once: true
+  });
+
+  gsap.utils.toArray('[data-reveal]:not(.ben-card)').forEach((el) => {
     gsap.from(el, {
       y: 60, opacity: 0, duration: .7, ease:'power3.out',
       scrollTrigger:{trigger: el, start:'top 85%'}
