@@ -685,7 +685,7 @@
    CONTACTO B2B
    ========================================================= */
 .b2b-contact-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:22px;
 }
 .b2b-contact-card{
   background:rgba(11,37,37,.88);

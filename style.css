@@ -497,6 +497,23 @@ section{position:relative;padding:120px 32px;}
 .value-text{color:var(--color-green);font-size:15px;}
 
 /* =========================================================
+   RESEÑAS GOOGLE (Elfsight wrapper)
+   ========================================================= */
+.reviews-wrap{
+  margin-top:16px;
+  padding:32px 28px;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 0 40px rgba(0,246,255,.08);
+}
+@media(max-width:768px){
+  .reviews-wrap{padding:20px 14px;}
+}
+
+/* =========================================================
    MENÚ — pestañas
    ========================================================= */
 .tabs{
