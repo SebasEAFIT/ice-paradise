@@ -494,18 +494,6 @@ if(!isTouch){
   });
 }
 
-/* =========================================================
-   VIDEO BG — autoplay loop muted (kick para iOS si falla)
-   ========================================================= */
-(function videoLoop(){
-  const v = document.getElementById('bgVideo');
-  if(!v) return;
-  const tryPlay = () => { const p = v.play(); if(p && p.catch) p.catch(()=>{}); };
-  tryPlay();
-  ['click','touchstart','scroll'].forEach(ev =>
-    window.addEventListener(ev, tryPlay, {once:true, passive:true})
-  );
-})();
 
 /* =========================================================
    GSAP — entrance animations + scroll triggers
