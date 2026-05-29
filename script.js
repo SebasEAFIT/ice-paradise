@@ -496,15 +496,12 @@ if(!isTouch){
 
 
 /* =========================================================
-   GSAP — entrance animations + scroll triggers
-   ========================================================= */
-/* =========================================================
    LENIS — smooth scroll con integración GSAP
    ========================================================= */
 if(typeof Lenis !== 'undefined'){
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    lerp: 0.12,
+    wheelMultiplier: 1,
     smoothTouch: false,
   });
   lenis.on('scroll', () => {
@@ -514,6 +511,9 @@ if(typeof Lenis !== 'undefined'){
   gsap?.ticker.lagSmoothing(0);
 }
 
+/* =========================================================
+   GSAP — entrance animations + scroll triggers
+   ========================================================= */
 window.addEventListener('load', () => {
   if(typeof gsap === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
