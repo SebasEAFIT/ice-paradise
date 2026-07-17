@@ -748,6 +748,7 @@ section{position:relative;padding:120px 32px;}
   display:grid;grid-template-columns:repeat(2,1fr);gap:40px;
   max-width:1100px;margin:36px auto 0;
 }
+.promos .promo-card:last-child:nth-child(3){grid-column:1 / -1;}
 .promo-card{
   position:relative;
   background:
@@ -843,6 +844,11 @@ section{position:relative;padding:120px 32px;}
 .promo-text{
   color:var(--color-white);
   font-size:17px;line-height:1.55;
+}
+.promo-sub{
+  margin-top:10px;
+  font-weight:700;
+  color:var(--color-cyan);
 }
 .promo-foot{
   color:var(--color-mint);
