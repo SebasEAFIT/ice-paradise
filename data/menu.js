@@ -24,7 +24,7 @@ window.MENU_DATA = {
   },
 
   /* Neverita — precio base, varía según adiciones */
-  neverita: { desde: 60000, nota: 'en adelante según adiciones' },
+  neverita: { desde: 70000, nota: 'en adelante según adiciones' },
 
   /* Bebidas no granizadas — orden: menor a mayor precio */
   bebidas: [
