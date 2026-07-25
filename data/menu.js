@@ -63,13 +63,14 @@ window.MENU_DATA = {
 
   /* Licores en botella / media. Orden: menor a mayor precio */
   licores: [
-    { nombre: 'Aguardiente · media',              precio: 60000 },
-    { nombre: 'Ron Viejo de Caldas · media',      precio: 90000 },
-    { nombre: 'Smirnoff Tamarindo · botella',     precio: 100000 },
-    { nombre: 'Vodka Absolut · botella',          precio: 160000 },
-    { nombre: 'Whisky Buchanans · botella',       precio: 250000 },
-    { nombre: 'Old Parr · botella',               precio: 250000 },
-    { nombre: 'Don Julio · botella',              precio: 380000 }
+    { nombre: 'Aguardiente · Media',                          precio: 60000 },
+    { nombre: 'Ron Viejo de Caldas Tradicional · Media',      precio: 60000 },
+    { nombre: 'Ron Viejo de Caldas 8 años · Botella',         precio: 90000 },
+    { nombre: 'Smirnoff Tamarindo · Botella',                 precio: 100000 },
+    { nombre: 'Vodka Absolut · Botella',                      precio: 160000 },
+    { nombre: 'Whisky Buchanans · Botella',                   precio: 250000 },
+    { nombre: 'Old Parr · Botella',                           precio: 250000 },
+    { nombre: 'Don Julio · Botella',                          precio: 380000 }
   ]
 };
 
