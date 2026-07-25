@@ -543,7 +543,8 @@ window.addEventListener('load', () => {
   ScrollTrigger.batch('.ben-card', {
     onEnter: batch => gsap.from(batch, {
       y: 30, opacity: 0, duration: .5,
-      stagger: 0.07, ease: 'power2.out'
+      stagger: 0.07, ease: 'power2.out',
+      clearProps: 'all'
     }),
     start: 'top 90%',
     once: true
