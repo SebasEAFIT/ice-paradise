@@ -145,6 +145,14 @@ if(burger && mobileMenu){
     burger.classList.remove('open');
     mobileMenu.classList.remove('open');
   }));
+  document.addEventListener('click', e => {
+    if(!mobileMenu.classList.contains('open')) return;
+    if(mobileMenu.contains(e.target) || burger.contains(e.target)) return;
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+    mobileMenu.setAttribute('aria-hidden', true);
+  });
 }
 
 /* =========================================================
