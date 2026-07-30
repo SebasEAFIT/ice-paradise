@@ -66,7 +66,7 @@ window.MENU_DATA = {
     { nombre: 'Aguardiente · Media',                          precio: 60000 },
     { nombre: 'Ron Viejo de Caldas Tradicional · Media',      precio: 60000 },
     { nombre: 'Ron Viejo de Caldas 8 años · Media',           precio: 90000 },
-    { nombre: 'Ron Viejo de Caldas Escencial · Botella',      precio: 100000 },
+    { nombre: 'Ron Viejo de Caldas Esencial · Botella',      precio: 100000 },
     { nombre: 'Smirnoff Tamarindo · Botella',                 precio: 100000 },
     { nombre: 'Vodka Absolut · Botella',                      precio: 160000 },
     { nombre: 'Whisky Buchanans · Botella',                   precio: 250000 },
