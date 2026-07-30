@@ -24,7 +24,7 @@ window.MENU_DATA = {
   },
 
   /* Neverita — precio base, varía según adiciones */
-  neverita: { desde: 70000, nota: 'en adelante según adiciones' },
+  neverita: { desde: 60000, nota: 'en adelante según adiciones' },
 
   /* Bebidas no granizadas — orden: menor a mayor precio */
   bebidas: [
@@ -65,7 +65,8 @@ window.MENU_DATA = {
   licores: [
     { nombre: 'Aguardiente · Media',                          precio: 60000 },
     { nombre: 'Ron Viejo de Caldas Tradicional · Media',      precio: 60000 },
-    { nombre: 'Ron Viejo de Caldas 8 años · Botella',         precio: 90000 },
+    { nombre: 'Ron Viejo de Caldas 8 años · Media',           precio: 90000 },
+    { nombre: 'Ron Viejo de Caldas Escencial · Botella',      precio: 100000 },
     { nombre: 'Smirnoff Tamarindo · Botella',                 precio: 100000 },
     { nombre: 'Vodka Absolut · Botella',                      precio: 160000 },
     { nombre: 'Whisky Buchanans · Botella',                   precio: 250000 },
